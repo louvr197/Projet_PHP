@@ -2,9 +2,7 @@
 <html lang="fr">
 
 <head>
-    <?php
-    require_once __DIR__ . DIRECTORY_SEPARATOR . "navPrincipale.php";
-    ?>
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
     <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

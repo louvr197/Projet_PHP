@@ -1,7 +1,13 @@
 <?php
+// Data
 
-$pageTitre  = "Acceuil";
-$metaDescription  = "Vous êtes sur la page d'acceuil";
-require_once __DIR__ . DIRECTORY_SEPARATOR . "navPrincipale.php";
+// Appel à la vue
+function afficherAccueil(){
 
-require_once __DIR__ . DIRECTORY_SEPARATOR . "acceuilView.php";
+$pageTitre  = "Accueil";
+$metaDescription  = "Vous êtes sur la page d'accueil";
+
+
+require_once CONTROLLERS .  "BaseController.php";
+require_once VIEWS  . "accueilView.php";
+}

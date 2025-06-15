@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'header.php';
+require_once TEMPLATE .'header.php';
 ?>
 
 <h1>Acceuil</h1>
-<?php require_once __DIR__ . DIRECTORY_SEPARATOR . 'footer.php'; ?>
+<?php require_once TEMPLATE .'footer.php'; ?>

@@ -12,5 +12,5 @@ function creerNavItem($segmentUrl,$nomPage):string {
     </li>
     <?php return ob_get_clean();
 }
-$navItems = creerNavItem('/','Acceuil') . creerNavItem('/contact.php','Contact');
 
+$navItems = creerNavItem('/','Acceuil') . creerNavItem('/contact','Contact');
