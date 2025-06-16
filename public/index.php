@@ -14,6 +14,10 @@ else if ($uri === '/contact' ){
     require_once CONTROLLERS.'ContactController.php';
     afficherContact();
 }
+else if($uri === '/inscription') {
+    require_once CONTROLLERS.'InscriptionController.php';
+    afficherInscription();
+}
 else echo $uri;
 
 

@@ -31,7 +31,7 @@ h1 {
   font-size: 2em;
 }
 
-form.contactForm {
+form{
   display: grid;
   grid-template-columns: 1fr 3fr;
   width: 80vw;
@@ -45,11 +45,11 @@ p.errorMessage {
   margin: 0;
   color: red;
 }
-form.contactForm input,
-form.contactForm textarea {
+form input,
+form textarea {
   grid-column: span 2;
 }
-form.contactForm .status {
+form .status {
   grid-column: span 2;
   font-size: 1.5em;
   text-align: center;
