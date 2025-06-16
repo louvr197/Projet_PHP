@@ -7,7 +7,7 @@ require_once TEMPLATE . 'header.php';
 <h1>Contact</h1>
 <form class="contactForm" method="post">
 
-    <p class="status"><?= $statut ?? null ?></p>
+    <?php if ($_SERVER['REQUEST_METHOD'] === "POST") echo '<p class="status">' . htmlspecialchars($statut) . '</p>';    ?>
     <label for="nom">Nom :</label>
     <p class="errorMessage"><?= $errorMessage["nom"] ?? null ?></p>
     <input type="text" id="nom" name="nom" required minlength="2" maxlength="255"
@@ -47,7 +47,7 @@ require_once TEMPLATE . 'header.php';
                                                                                                                                                                     ?></textArea>
 
     <input type="submit" value="valider">
-    
+
 </form>
 
 <?php require_once TEMPLATE . 'footer.php'; ?>
