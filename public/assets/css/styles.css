@@ -33,7 +33,7 @@ h1 {
 
 form{
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 2fr 3fr;
   width: 80vw;
   margin: auto;
   padding: 1em;
@@ -53,4 +53,14 @@ form .status {
   grid-column: span 2;
   font-size: 1.5em;
   text-align: center;
+}
+form input[type="submit"] {
+  margin-top: 1em;
+  padding: 0.5em;
+  font-size: 1em;
+  justify-self: center;
+  width:fit-content;
+  background-color: goldenrod;
+  border-color: goldenrod;
+  border-radius: 5px;
 }

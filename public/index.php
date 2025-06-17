@@ -17,6 +17,9 @@ else if ($uri === '/contact' ){
 else if($uri === '/inscription') {
     require_once CONTROLLERS.'InscriptionController.php';
     afficherInscription();
+}else if($uri === '/connexion') {
+    require_once CONTROLLERS.'ConnexionController.php';
+    afficherConnexion();
 }
 else echo $uri;
 

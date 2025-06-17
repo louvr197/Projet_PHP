@@ -13,4 +13,4 @@ function creerNavItem($segmentUrl,$nomPage):string {
     <?php return ob_get_clean();
 }
 
-$navItems = creerNavItem('/','Acceuil') . creerNavItem('/contact','Contact').creerNavItem('/inscription','Inscription');
+$navItems = creerNavItem('/','Acceuil') . creerNavItem('/contact','Contact').creerNavItem('/inscription','Inscription').creerNavItem('/connexion','Connexion');

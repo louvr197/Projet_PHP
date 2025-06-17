@@ -1,24 +1,21 @@
 <?php
 // Data
 
-// Appel à la vue
-
 require_once(CORE.'GestionFormulaire.php');
-function afficherInscription()
+// Appel à la vue
+function afficherConnexion()
 {
 
     $conditionsInscription = [
         "pseudo" => ["required" => true, "minlength" => 2, "maxlength" => 255],
-        "mail" => ["required" => true, "email" => true],
         "mdp" => ["required" => true, "minlength" => 8, "maxlength" => 72],
-        "confirmMdp" => ["required" => true, "minlength" => 8, "maxlength" => 72,"confirmMdp"=> true]
 
     ];
     $errorMessage = [];
     if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $errorMessage = verifieConditions($conditionsInscription);
         if (sizeof($errorMessage) === 0) {
-            if (true) $statut = "Le formulaire et le mail ont bien été envoyé !";
+            if (mailContact()) $statut = "Le formulaire et le mail ont bien été envoyé !";
             else $statut = "Le mail n'a pas été envoyé";
         } else {
             $statut = "Le formulaire n'a pas été envoyé !";
@@ -35,5 +32,5 @@ function afficherInscription()
 
 
     require_once CONTROLLERS .  "BaseController.php";
-    require_once VIEWS  . "InscriptionView.php";
+    require_once VIEWS  . "ConnexionView.php";
 }
