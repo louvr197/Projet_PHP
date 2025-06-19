@@ -8,6 +8,13 @@ require_once CORE."GestionErreur.php";
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $methode = $_SERVER['REQUEST_METHOD'];
+require_once CORE . 'gestionAuthentification.php';
+
+function deconnecter() {
+    deconnecter_utilisateur();
+    header('Location: /connexion');
+    exit;
+} 
 
 if ($uri === '/' && $methode === 'GET')
 {
@@ -24,6 +31,14 @@ else if($uri === '/inscription') {
 }else if($uri === '/connexion') {
     require_once CONTROLLERS.'ConnexionController.php';
     afficherConnexion();
+}
+else if ($uri === '/profil'){
+    require_once CONTROLLERS.'ProfilController.php';
+    afficherProfil();
+}else if ($uri === '/deconnexion'){
+    deconnecter_utilisateur();
+    require_once CONTROLLERS . 'AccueilController.php';
+    afficherAccueil();
 }
 else echo $uri;
 

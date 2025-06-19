@@ -1,8 +1,13 @@
 <?php
 // Data
-
+require_once CORE . 'gestionAuthentification.php';
 require_once CORE . 'GestionFormulaire.php';
-require_once MODELS.'UtilisateurModel.php';
+require_once MODELS . 'UtilisateurModel.php';
+require_once CORE . 'gestionAuthentification.php';
+if (est_connecte()) {
+    header('Location: /profil');
+    exit;
+}
 // Appel à la vue
 function afficherConnexion()
 {
@@ -30,7 +35,9 @@ function afficherConnexion()
             $utilisateur = selectionnerUtilisateurParSonPseudo($pseudo);
             if ($utilisateur && password_verify($mdp, $utilisateur['uti_motdepasse'])) {
                 $statut = "Connexion réussie !";
-                // Ici, tu peux démarrer une session, etc.
+                connecter_utilisateur($utilisateur['uti_id']);
+                header('Location: /profil');
+                exit;
             } else {
                 $statut = "Identifiants incorrects.";
             }

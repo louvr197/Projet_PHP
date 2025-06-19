@@ -12,5 +12,10 @@ function creerNavItem($segmentUrl,$nomPage):string {
     </li>
     <?php return ob_get_clean();
 }
-
+$navItems = '';
+if(est_connecte()){
+$navItems = creerNavItem('/','Acceuil') . creerNavItem('/contact','Contact').creerNavItem('/deconnexion','Deconnexion');
+}
+else {
 $navItems = creerNavItem('/','Acceuil') . creerNavItem('/contact','Contact').creerNavItem('/inscription','Inscription').creerNavItem('/connexion','Connexion');
+}

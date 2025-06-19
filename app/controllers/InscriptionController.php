@@ -2,7 +2,11 @@
 // Data
 
 // Appel à la vue
-
+require_once CORE . 'gestionAuthentification.php';
+if (est_connecte()) {
+    header('Location: /profil');
+    exit;
+}
 require_once(CORE . 'GestionFormulaire.php');
 function afficherInscription()
 {

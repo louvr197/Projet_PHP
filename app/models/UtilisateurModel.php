@@ -87,6 +87,13 @@ function selectionnerUtilisateurParSonPseudo(string $pseudo): ?array
     return selectionnerDansTable($requete, ['pseudo' => $pseudo]);
 }
 
+function selectionnerUtilisateurParId($id) {
+    $pdo = obtenirConnexionBdd();
+    $stmt = $pdo->prepare("SELECT uti_pseudo, uti_email FROM t_utilisateur_uti WHERE uti_id = :id");
+    $stmt->execute(['id' => $id]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 function supprimerUtilisateur(int $id): bool
 {
     $table = obtenirNomTable();
