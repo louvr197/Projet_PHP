@@ -26,7 +26,7 @@ function afficherContact()
         } else {
             $statut = "Le formulaire n'a pas été envoyé !";
         }
-        if (DEBUG) {
+        if (DEV_MODE) {
             echo "<pre>";
             print_r($_POST);
             print_r($errorMessage);

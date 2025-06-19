@@ -1,6 +1,10 @@
 
 <?php
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'constantes.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php';
+require_once CORE."GestionErreur.php";
+
+
+
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $methode = $_SERVER['REQUEST_METHOD'];

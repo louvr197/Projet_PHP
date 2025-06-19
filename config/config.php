@@ -6,4 +6,14 @@ define('MODELS',ROOT.DS.'app'.DS.'models'.DS);
 define('VIEWS',ROOT.DS.'app'.DS.'views'.DS);
 define('TEMPLATE',VIEWS.'template'.DS);
 define('CORE',ROOT.DS.'core'.DS);
-define('DEBUG',true);
+define('DEV_MODE',true);
+
+function obtenirConfigBdd(): array
+{
+    return [
+        'serveur'     => 'localhost',
+        'bdd'         => 'bdd_projet_web',
+        'utilisateur' => 'root',
+        'mdp'         => ''
+    ];
+}

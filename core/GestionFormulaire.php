@@ -11,13 +11,25 @@ function respecteCondition($condition, $champ, $value = null): bool
         "maxlength" =>
         mb_strlen($_POST[$champ]) <= $value,
         "email" => filter_var($_POST[$champ], FILTER_VALIDATE_EMAIL),
-        "confirmMdp"=>
-        strcmp($_POST[$champ],$_POST["mdp"])===0,
+        "confirm" =>
+        strcmp($_POST[$champ], $_POST[$value]) === 0,
+        "unique" =>
+        estDansBdd($champ, $value) == 0,
         default => false
     };
 }
 
-
+function estDansBdd($champ,$value)
+{
+    require_once MODELS . 'UtilisateurModel.php';
+    $table = $value['table'];
+    $colonne = $value['colonne'];
+    $requete = "SELECT COUNT(*) FROM $table WHERE $colonne = :valeur";
+    $pdo = obtenirConnexionBdd();
+    $stmt = $pdo->prepare($requete);
+    $stmt->execute(['valeur' => $_POST[$champ]]);
+    return $stmt->fetchColumn();
+}
 
 
 

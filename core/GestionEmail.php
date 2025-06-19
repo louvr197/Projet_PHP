@@ -49,7 +49,7 @@ function mailContact()
     $message = quoted_printable_encode($message);
 
     // 6. Tentative d'envoi du courriel :
-    if (DEBUG) {
+    if (DEV_MODE) {
         echo "<pre>";
         echo htmlspecialchars($destinataire);
         print_r($entetes);
