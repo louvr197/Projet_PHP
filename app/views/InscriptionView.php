@@ -6,6 +6,7 @@ require_once TEMPLATE . 'header.php';
 
 <h1>Inscription</h1>
 <form class="contactForm" method="post">
+    <?php if ($_SERVER['REQUEST_METHOD'] === "POST") echo '<p class="status">' . htmlspecialchars($statut) . '</p>';    ?>
     <label for="pseudo">Pseudo :</label>
     <p class="errorMessage"><?= $errorMessage["pseudo"] ?? null ?></p>
     <input type="text" id="pseudo" name="pseudo" required minlength="2" maxlength="255"

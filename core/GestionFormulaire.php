@@ -43,7 +43,29 @@ function verifieConditions($champs)
         ) {
             foreach ($conditions as $condition => $value) {
                 if (!key_exists($champ, $errorMessage) && !respecteCondition($condition, $champ, $value)) {
-                    $errorMessage[$champ] = 'la condition "' . $condition  . '"' . " n'est pas respectée.";
+                    switch ($condition) {
+                        case 'required':
+                            $msg = "Ce champ est obligatoire.";
+                            break;
+                        case 'minlength':
+                            $msg = "Ce champ doit contenir au moins $value caractères.";
+                            break;
+                        case 'maxlength':
+                            $msg = "Ce champ doit contenir au maximum $value caractères.";
+                            break;
+                        case 'email':
+                            $msg = "Veuillez saisir une adresse email valide.";
+                            break;
+                        case 'confirm':
+                            $msg = "Les deux champs ne correspondent pas.";
+                            break;
+                        case 'unique':
+                            $msg = "Cette valeur est déjà utilisée.";
+                            break;
+                        default:
+                            $msg = "La condition \"$condition\" n'est pas respectée.";
+                    }
+                    $errorMessage[$champ] = $msg;
                 }
             }
         }

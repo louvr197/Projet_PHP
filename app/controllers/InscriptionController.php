@@ -57,7 +57,7 @@ function afficherInscription()
                 $statut = "Erreur lors de l'inscription.";
             }
         } else {
-            $statut = "Le formulaire n'a pas été envoyé !";
+            $statut = "L'inscription est invalide !";
         }
         if (DEV_MODE) {
             echo "<pre>";
