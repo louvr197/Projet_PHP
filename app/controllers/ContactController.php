@@ -1,10 +1,5 @@
 <?php
-//     $dictionnaireCondition = [
-//     "required" => "champ requis",
-//     "minlength" => "longueur minimale",
-//     "maxlength" => "longueur maximale",
-//     "email" => "email valide"
-// ];
+
 require_once(CORE.'GestionEmail.php');
 require_once(CORE.'GestionFormulaire.php');
 function afficherContact()
@@ -33,7 +28,7 @@ function afficherContact()
             echo "</pre>";
         }
     }
-    // Data
+    
     $pageTitre  = "Contact";
     $metaDescription  = "Vous êtes sur la page de contact";
     require_once CONTROLLERS .  "BaseController.php";
