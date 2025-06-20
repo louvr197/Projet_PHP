@@ -14,7 +14,7 @@ function creerNavItem($segmentUrl,$nomPage):string {
 }
 $navItems = '';
 if(est_connecte()){
-$navItems = creerNavItem('/','Acceuil') . creerNavItem('/contact','Contact').creerNavItem('/deconnexion','Deconnexion');
+$navItems = creerNavItem('/','Acceuil') . creerNavItem('/contact','Contact').creerNavItem('/profil','Profil').creerNavItem('/deconnexion','Deconnexion');
 }
 else {
 $navItems = creerNavItem('/','Acceuil') . creerNavItem('/contact','Contact').creerNavItem('/inscription','Inscription').creerNavItem('/connexion','Connexion');
